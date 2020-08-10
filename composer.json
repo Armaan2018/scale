@@ -1,0 +1,22 @@
+{
+    "name": "armaan2018/scale",
+    "description": "This is scale backend practice purpose",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "armaan",
+            "email": "armaan@gmail.com"
+        }
+    ],
+
+
+  "autoload":{
+        "psr-4" :{
+            "App\\" : "app\\"
+        } 
+     },
+     
+
+    "require": {}
+}
