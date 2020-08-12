@@ -294,6 +294,27 @@ protected function fileUpload($file, $location = '', array $file_type = ['jpg','
 
 
 
+
+
+
+
+
+
+
+  public function showSingle($tbl,$id)
+  {
+      
+
+
+
+       $sql  = "SELECT * FROM $tbl WHERE id = '$id' ";
+       $stmt = $this -> connection() -> prepare($sql);
+       $stmt -> execute();
+       return $stmt;
+
+
+  }
+
   
 
 

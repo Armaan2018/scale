@@ -422,6 +422,54 @@ $(document).on('submit','form#add_student_form',function(event){
 
 
 
+//profile single show
+
+
+$(document).on('click','a#single_view',function(){
+
+         $('#single_show_modal').modal('show');
+
+
+         let view_id = $(this).attr('view_id');
+
+
+         $.ajax({
+
+         	url : 'templates/ajax/singleviewuser.php',
+         	method : "POST",
+         	data : { id : view_id },
+            
+            success : function(data){
+
+
+            		let single_data = JSON.parse(data);
+
+					// $('img#single_student_img').attr('src', 'media/students/' + single_data.photo);
+					$('#name_of_user').text(single_data.name);
+					$('small#role_of_user').text(single_data.role);
+					$('#cell_of_user').text(single_data.cell);
+					$('#email_of_user').text(single_data.email);
+		
+
+            }
+
+
+
+
+
+
+
+
+
+
+         });
+
+     return false;
+
+});
+
+
+
 
 
 

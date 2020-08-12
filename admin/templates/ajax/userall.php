@@ -34,7 +34,7 @@ require_once "../../../config.php";
                                     <td>
                                         
 
-             <a class="btn btn-sm btn-info" href="#">View</a>
+             <a class="btn btn-sm btn-info" view_id = "<?php echo $singledata['id'];?>" id="single_view" href="#">View</a>
             <a class="btn btn-sm btn-warning" href="#">Edit</a>
             <a class="btn btn-sm btn-danger" id="deluser" userid="<?php echo $singledata['id']; ?>" href="#">Delete</a>
                                     </td>

@@ -89,7 +89,90 @@ include_once 'templates/headerpart.php';
 
 
 
+<!---   profile page  -->
 
+
+ <div id="single_show_modal" class="modal fade">
+                        <div class="modal-dialog">
+                                <div class="modal-body">
+
+
+
+                      
+
+<section class="panel no-border bg-dark lt">
+
+
+
+
+ <div class="panel-body">
+  <div class="row m-t-xl"> 
+
+<div class="col-xs-3"></div>
+
+    <div class="col-xs-6 text-center">
+     <div class="inline">
+     <div class="easypiechart easyPieChart" data-percent="75" data-line-width="6" data-bar-color="#fff" data-track-color="#2796de" data-scale-color="false" data-size="140" data-line-cap="butt" data-animate="1000" style="width: 140px; height: 140px; line-height: 140px;"> 
+        <div class="thumb-lg avatar"> <img src="images/a5.png" class="dker"> </div> 
+        <canvas width="140" height="140"></canvas></div>
+           <div class="h4 m-t m-b-xs font-bold text-lt" id="name_of_user">John.Smith</div> <small class="text-muted m-b" id="role_of_user">Art director</small> </div> </div> 
+  
+
+
+<div class="col-xs-3"></div>
+
+           </div> 
+           <div class="wrapper m-t-xl m-b"> 
+            <div class="row m-b">
+             <div class="col-xs-6 text-right"> <small>Cell Phone</small> 
+                <div class="text-lt font-bold" id="cell_of_user">1243 0303 0333</div> </div> 
+                <div class="col-xs-6"> <small >Email</small> 
+                    <div class="text-lt font-bold" id="email_of_user">+32(0) 3003 234 543</div>
+                     </div> 
+                       </div> 
+                     <div class="row"> <div class="col-xs-6 text-right"> <small>Reporter</small> <div class="text-lt font-bold">Coch Jose</div>
+                      </div>
+                      <div class="col-xs-6"> <small>Manager</small> 
+                        <div class="text-lt font-bold">James Richo</div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div>
+
+
+
+
+ <footer class="panel-footer dk text-center no-border"> 
+
+    anything
+
+<!-- <div class="row pull-out"> <div class="col-xs-4"> <div class="padder-v"> <span class="m-b-xs h3 block text-white">245</span> <small class="text-muted">Followers</small> </div> </div> <div class="col-xs-4 dker"> <div class="padder-v"> <span class="m-b-xs h3 block text-white">55</span> <small class="text-muted">Following</small> </div> </div> <div class="col-xs-4"> <div class="padder-v"> <span class="m-b-xs h3 block text-white">2,035</span> <small class="text-muted">Tweets</small> </div> </div> </div>
+ -->
+
+
+  </footer> </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+</div>
 
 
 

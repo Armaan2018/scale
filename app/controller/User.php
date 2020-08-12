@@ -38,6 +38,12 @@ class User extends Database
     public function creatUser($data)
 
     {
+
+
+
+           $file_name = !empty($_FILES['photo']['name']) ? $this -> fileUpload($_FILES['photo'],'../../students/') : '';
+
+
          $data = $this -> create('adminis',[
 
 
@@ -48,7 +54,8 @@ class User extends Database
                'email'    =>  $data['email'],
                'password' =>  password_hash('admin', PASSWORD_DEFAULT),
                'role'     =>  $data['role'],
-               'cell'    =>   $data['cell'],
+               'cell'     =>   $data['cell'],
+               'photo'
 
          ]);
 
@@ -133,6 +140,33 @@ class User extends Database
 
 
     }
+
+
+
+    public function singleUserview ($id){
+
+
+
+
+     return $data = $this -> showSingle('adminis',$id);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
