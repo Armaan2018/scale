@@ -2,13 +2,11 @@
     <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Start</div>
     <ul class="nav nav-main" data-ride="collapse">
         <li class="active">
-            <a href="index.html" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Overview</span> </a>
+            <a href="adduser.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Users</span> </a>
         </li>
-        <li>
-            <a href="#" class="auto">
-                <span class="pull-right text-muted"> <i class="i i-circle-sm-o text"></i> <i class="i i-circle-sm text-active"></i> </span> <b class="badge bg-danger pull-right">4</b>
-                <i class="i i-stack icon"> </i> <span class="font-bold">Layouts</span>
-            </a>
+      <li class="active">
+            <a href="addstudents.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Students</span> </a>
+        </li>
             <ul class="nav dk">
                 <li>
                     <a href="layout-color.html" class="auto"> <i class="i i-dot"></i> <span>Color option</span> </a>
