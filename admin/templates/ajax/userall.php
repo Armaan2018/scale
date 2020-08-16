@@ -30,12 +30,12 @@ require_once "../../../config.php";
                                     <td><?php echo $singledata['uname']; ?></td>
                                     <td><?php echo $singledata['cell']; ?></td>
                                     <td><?php echo $singledata['role']; ?></td>
-                                    <td><img style="width: 50px;height:50px;" src="images/a1.png" alt=""></td>
+                                    <td><img style="width: 50px;height:50px;" src="users/<?php echo $singledata['photo']; ?>" alt=""></td>
                                     <td>
                                         
 
              <a class="btn btn-sm btn-info" view_id = "<?php echo $singledata['id'];?>" id="single_view" href="#">View</a>
-            <a class="btn btn-sm btn-warning" href="#">Edit</a>
+            <a class="btn btn-sm btn-warning" id="edituser" editid="<?php echo $singledata['id']; ?>" href="#">Edit</a>
             <a class="btn btn-sm btn-danger" id="deluser" userid="<?php echo $singledata['id']; ?>" href="#">Delete</a>
                                     </td>
                

@@ -89,6 +89,109 @@ include_once 'templates/headerpart.php';
 
 
 
+
+
+
+
+
+
+
+
+<!---- edit form  ---->
+
+
+<div id="update_user_modal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- <div class="modal-header"></div> -->
+                                <div class="modal-body">
+                                    <h2>Update User</h2>
+
+                                    <div id="keyupmsg"></div>
+
+                                    
+
+                                    <hr>
+
+
+                                    <form id="update_user_form" action="" method="POST" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="">Name</label>
+                                            <input class="form-control" name="name" type="text" value="name">
+                                            <input class="form-control" name="user_id_update" type="hidden">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Username</label>
+                                            <input class="form-control" id="uname" name="uname" type="text" value="name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input class="form-control" name="email" type="text" value="name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Cell</label>
+                                            <input class="form-control" name="cell" type="text" value="name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Role</label>
+                                            <select class="form-control" name="role" id="">
+                                                <option value="">- select -</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="Teacher">Teacher</option>
+                                                <option value="Staff">Staff</option>
+                                            </select>
+                                        </div>
+
+                                                   
+                                        <div class="form-group">
+                                        <div class="am text-center">
+                                        <img id="image_edit_id" src="images/a0.png" style="height: 120px;
+                                        width: 120px;">
+                                        </div>
+                                        </div>
+
+
+                                 <div class="form-group">
+                                            <label for="">photo</label>
+                                            <input class="form-control" name="photo" type="file" placeholder="name">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for=""></label>
+                                            <input class="btn btn-primary" name="add" type="submit" value="Update User">
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- <div class="modal-footer"></div> -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!---   profile page  -->
 
 
@@ -113,7 +216,7 @@ include_once 'templates/headerpart.php';
     <div class="col-xs-6 text-center">
      <div class="inline">
      <div class="easypiechart easyPieChart" data-percent="75" data-line-width="6" data-bar-color="#fff" data-track-color="#2796de" data-scale-color="false" data-size="140" data-line-cap="butt" data-animate="1000" style="width: 140px; height: 140px; line-height: 140px;"> 
-        <div class="thumb-lg avatar"> <img src="images/a5.png" class="dker"> </div> 
+        <div class="thumb-lg avatar"> <img id="photo_of_user" src="images/a5.png" class="dker"> </div> 
         <canvas width="140" height="140"></canvas></div>
            <div class="h4 m-t m-b-xs font-bold text-lt" id="name_of_user">John.Smith</div> <small class="text-muted m-b" id="role_of_user">Art director</small> </div> </div> 
   

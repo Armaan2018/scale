@@ -41,7 +41,7 @@ class User extends Database
 
 
 
-           $file_name = !empty($_FILES['photo']['name']) ? $this -> fileUpload($_FILES['photo'],'../../students/') : '';
+           $file_name = !empty($_FILES['photo']['name']) ? $this -> fileUpload($_FILES['photo'],'../../users/') : '';
 
 
          $data = $this -> create('adminis',[
@@ -54,8 +54,8 @@ class User extends Database
                'email'    =>  $data['email'],
                'password' =>  password_hash('admin', PASSWORD_DEFAULT),
                'role'     =>  $data['role'],
-               'cell'     =>   $data['cell'],
-               'photo'
+               'cell'     =>  $data['cell'],
+               'photo'    =>  $file_name,
 
          ]);
 
@@ -157,7 +157,34 @@ class User extends Database
 
 
 
+/*********update users ************/
 
+
+public function updateUser($data,$id)
+{
+
+  $file_name = !empty($_FILES['photo']['name']) ? $this -> fileUpload($_FILES['photo'],'../../users/') : '';
+
+
+   $this -> update('adminis',$id,[
+
+
+               'name'    => $data['name'],
+               'uname'    => $data['uname'],
+               'email'    => $data['email'],
+               'cell'    => $data['cell'],
+               'role'     => $data['role'],
+               'photo'    => $file_name,
+              
+
+     ]);
+
+
+   return "<p class=\"alert alert-success\">Porfile updated Successfull ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
+  
+
+
+}
 
 
 

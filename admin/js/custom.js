@@ -38,7 +38,9 @@ $(document).on('click','#add_user_button',function(){
 	});
 
 
-
+//********************************//
+//*      All Users Function      *//           
+//*******************************//
 
 
  function allUsers(){
@@ -66,6 +68,10 @@ $(document).on('click','#add_user_button',function(){
 
 
 
+
+//********************************//
+//*     All Students Function   *//           
+//*******************************//
 
  function allStudents(){
 
@@ -98,10 +104,9 @@ $(document).on('click','#add_user_button',function(){
 
 
 
-
-
-///   testing purpose    successfull    ////
-
+ // ********************************//
+//     Username check             //           
+ // ******************************//
 
 function keyupMsg (){
 
@@ -128,46 +133,16 @@ $("input#uname").keyup(function(){
 
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-  
-
-
-
 
 keyupMsg();
 
 
 
- 
 
-
-//sj
-
+ // ********************************//
+//     Username check             //           
+ // ******************************//
 $(document).on('submit','form#add_user_form',function(event){
   event.preventDefault();
 
@@ -238,6 +213,12 @@ else{
 
 
 });
+
+
+// ********************************//
+//     delete users               //           
+ // ******************************//
+
 
 
 $(document).on('click','a#deluser',function(event){
@@ -444,7 +425,7 @@ $(document).on('click','a#single_view',function(){
 
             		let single_data = JSON.parse(data);
 
-					// $('img#single_student_img').attr('src', 'media/students/' + single_data.photo);
+					$('img#photo_of_user').attr('src', 'users/' + single_data.photo);
 					$('#name_of_user').text(single_data.name);
 					$('small#role_of_user').text(single_data.role);
 					$('#cell_of_user').text(single_data.cell);
@@ -467,6 +448,254 @@ $(document).on('click','a#single_view',function(){
      return false;
 
 });
+
+
+// single show student view
+
+
+ $(document).on('click','a#view_stud',function(){
+ 
+            $('#single_student_show').modal('show');
+            let view_id = $(this).attr('view_id');
+
+            $.ajax({
+
+
+              url     : 'templates/ajax/singlstudview.php',
+              method  : "POST",
+              data    : {id : view_id},
+              success : function(data){
+                   
+
+                   let single = JSON.parse(data);
+
+
+                   $('#name').text(single.name);
+                   $('#roll').text(single.roll);
+                   $('#reg').text(single.reg);
+                   $('#board').text(single.board);
+                   $('#inst').text(single.inst);
+                   $('#year').text(single.year);
+                   $('img#photo_of_user').attr('src','students/' + single.photo);
+
+
+
+
+                       
+              }
+
+
+           
+
+            });
+          
+
+  return false;
+
+
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////update user form
+
+
+function test(id)
+
+{
+ $.ajax({
+
+         url     : 'templates/ajax/placeeditusers.php',
+         method  : "POST",
+         data    : {id : id},
+         success : function(data){
+           
+
+          let edit_data = JSON.parse(data);
+
+           $('#update_user_modal input[name = "name"]').val(edit_data.name);
+           $('#update_user_modal input[name = "uname"]').val(edit_data.uname);
+           $('#update_user_modal input[name = "email"]').val(edit_data.email);
+           $('#update_user_modal input[name = "cell"]').val(edit_data.cell);
+           $('#update_user_modal select[name = "role"]').val(edit_data.role);
+           $('#update_user_modal input[name = "user_id_update"]').val(edit_data.id);
+           $('#update_user_modal img#image_edit_id').attr('src','users/' + edit_data.photo);
+
+        
+         }
+
+
+        }); 
+
+
+}
+
+
+
+
+
+$(document).on('click','a#edituser',function(event){
+
+         event.preventDefault();
+         let edit_id = $(this).attr('editid');
+
+          
+         test(edit_id);
+
+
+
+
+         
+
+        $('#update_user_modal').modal('show');
+         
+
+
+        
+
+});
+
+
+
+
+
+////////////////////
+
+
+//update user form//
+
+$(document).on('submit','form#update_user_form',function(event){
+
+         event.preventDefault();
+
+         $.ajax({
+
+          
+         url : 'templates/ajax/updateusers.php',
+         data   : new FormData(this),
+         contentType:false,
+         processData : false,
+         method : "POST",
+         success:function(data){
+                 $('.mess').html(data);
+                 $('#update_user_modal').modal('hide');
+                 allUsers();
+
+
+
+         }
+
+
+
+
+
+
+         });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+$(document).on('click','a#edit_stud',function(event){
+             event.preventDefault();
+
+           let edit_id = $(this).attr('edit_id');
+
+           $('#update_student_modal').modal('show');
+
+
+           $.ajax({
+
+            url     : 'templates/ajax/placeeditstud.php',
+            method  : 'POST',
+            data    : {id : edit_id},
+            success : function(data){
+
+
+              let single = JSON.parse(data);
+
+
+              $('#update_student_modal input[name="name"]').val(single.name);
+              $('#update_student_modal input[name="student_id_update"]').val(single.id);
+              $('#update_student_modal input[name="roll"]').val(single.roll);
+              $('#update_student_modal input[name="reg"]').val(single.reg);
+              $('#update_student_modal select[name="board"]').val(single.board);
+              $('#update_student_modal input[name="inst"]').val(single.inst);
+              $('#update_student_modal select[name="year"]').val(single.year);
+              $('#update_student_modal select[name="exam"]').val(single.exam);
+              $('#update_student_modal img').attr('src','students/' + single.photo);
+
+                  
+
+            }
+
+
+
+
+           });
+           
+          
+
+
+});
+
+
+
+
+//student form update 
+
+
+$(document).on('submit','form#update_student_form',function(event){
+       event.preventDefault();
+       
+       $.ajax({
+            url     : 'templates/ajax/updatestud.php',
+            data    : new FormData(this),
+            contentType : false,
+            processData  : false,
+            method  : "POST",
+            success : function(data){
+
+                 $('.studmsg').html(data);
+                 $('#update_student_modal').modal('hide');
+                 allStudents();
+
+            }
+
+
+
+
+
+       });
+
+});
+
+
+
+
 
 
 

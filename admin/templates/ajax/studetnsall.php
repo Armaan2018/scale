@@ -41,8 +41,8 @@ foreach ($alldata as $single):
                                     <td>
                                         
 
-             <a class="btn btn-sm btn-info" href="#">View</a>
-            <a class="btn btn-sm btn-warning" href="#">Edit</a>
+             <a class="btn btn-sm btn-info" id="view_stud" view_id="<?php  echo $single['id']; ?>" href="#">View</a>
+            <a class="btn btn-sm btn-warning" id="edit_stud" edit_id = "<?php echo $single['id']; ?>"; href="#">Edit</a>
             <a class="btn btn-sm btn-danger" userid="<?php echo $single['id']; ?>" id="deluser" href="#">Delete</a>
                                     </td>
                

@@ -298,7 +298,9 @@ protected function fileUpload($file, $location = '', array $file_type = ['jpg','
 
 
 
-
+  /*********************
+   *  single data show  *
+   ********************/
 
 
   public function showSingle($tbl,$id)
